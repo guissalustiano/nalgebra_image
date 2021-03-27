@@ -1,8 +1,8 @@
-mod pixel_type;
-
-use crate::pixel_type::*;
+use pixel_test::pixel_types::Rgb8;
+use nalgebra::Vector2;
 
 fn main() {
-    let pixel = Rgb8::new(120, 200, 0);
-    println!("{:?}", pixel);
+    let p = Rgb8::new(129, 30, 40);
+    let v = Vector2::new(p, p);
+    println!("{:?}", v);
 }
