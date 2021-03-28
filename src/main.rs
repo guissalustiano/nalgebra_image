@@ -1,8 +1,16 @@
+use nalgebra::DMatrix;
 use pixel_test::pixel_types::Rgb8;
-use nalgebra::Vector2;
+use pixel_test::image::img2matrix;
 
 fn main() {
-    let p = Rgb8::new(129, 30, 40);
-    let v = Vector2::new(p, p);
-    println!("{:?}", v);
+    let _p = Rgb8::new(129, 30, 40);
+
+    let img = image::open("img.png").expect("Image not found");
+    let img = img.to_rgb8();
+
+    let (weigth, heigh) = img.dimensions();
+    let a = img2matrix(img);
+
+    println!("{:?}", a)
+
 }
